@@ -36,7 +36,7 @@ class Song
     object_count(@@genres)
   end
   
-  def object_count(object)
+  def self.bject_count(object)
     hash = {}
     
     object.each do |x|
