@@ -43,11 +43,7 @@ class Song
     hash = {}
     
     object.each do |x|
-      if hash.key?(x)
-        hash[x] += 1
-      else
-        hash[x] = 1
-      end
+      hash.key?(x) ||=
     end
     hash
   end
