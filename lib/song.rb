@@ -57,11 +57,11 @@ class Song
   def object_count(object)
     hash = {}
     
-    @@genres.each do |genre|
-      if hash.key?(genre)
-        hash[genre] += 1
+    @@object.each do |x|
+      if hash.key?(x)
+        hash[x] += 1
       else
-        hash[genre] = 1
+        hash[x] = 1
       end
     end
     hash
