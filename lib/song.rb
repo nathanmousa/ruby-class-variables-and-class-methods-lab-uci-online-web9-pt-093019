@@ -36,6 +36,9 @@ class Song
     object_count(@@genres)
   end
   
+  
+  
+  private
   def self.object_count(object)
     hash = {}
     
@@ -48,4 +51,5 @@ class Song
     end
     hash
   end
+  
 end
