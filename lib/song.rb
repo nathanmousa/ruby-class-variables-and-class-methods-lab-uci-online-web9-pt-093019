@@ -53,4 +53,17 @@ class Song
     end
     hash
   end
+  
+  def object_count(object)
+    hash = {}
+    
+    @@genres.each do |genre|
+      if hash.key?(genre)
+        hash[genre] += 1
+      else
+        hash[genre] = 1
+      end
+    end
+    hash
+  end
 end
