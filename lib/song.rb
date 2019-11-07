@@ -57,7 +57,7 @@ class Song
   def object_count(object)
     hash = {}
     
-    @@object.each do |x|
+    object.each do |x|
       if hash.key?(x)
         hash[x] += 1
       else
