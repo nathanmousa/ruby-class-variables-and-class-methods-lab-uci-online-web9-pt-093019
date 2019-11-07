@@ -6,14 +6,14 @@ class Song
   @@genres = []
   
   def initialize(name, artist, genre)
-    @@count += 1
-    
     @name = name
     @artist = artist
     @genre = genre
     
     @@artists << artist
     @@genres << genre
+    
+    @@count += 1
   end
   
   def self.count
@@ -29,28 +29,24 @@ class Song
   end
   
   def self.artist_count
+    object_count(@@artists)
+  end
+  
+  def self.genre_count
+    object_count(@@genres)
+  end
+  
+  
+  
+  private
+  def self.object_count(object)
     hash = {}
     
-    @@artists.each do |artist|
-      if hash.key?(artist)
-        hash[artist] += 1
-      else
-        hash[artist] = 1
-      end
+    object.each do |x|
+      hash[x] ||= 0
+      hash[x] += 1
     end
     hash
   end
   
-  def self.genre_count
-    hash = {}
-    
-    @@genres.each do |genre|
-      if hash.key?(genre)
-        hash[genre] += 1
-      else
-        hash[genre] = 1
-      end
-    end
-    hash
-  end
 end
